@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeriaOnline", "FeriaOnline.csproj", "{52270075-3A38-417D-8190-6D95281E9ACF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B35CD1B-F9D3-4482-9E85-BA1FCCC4DA5F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52270075-3A38-417D-8190-6D95281E9ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52270075-3A38-417D-8190-6D95281E9ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52270075-3A38-417D-8190-6D95281E9ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52270075-3A38-417D-8190-6D95281E9ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A011EF-571B-4C7B-8FEE-F368FC9CC2E4}
+	EndGlobalSection
+EndGlobal
