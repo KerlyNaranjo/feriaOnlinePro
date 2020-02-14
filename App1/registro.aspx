@@ -66,6 +66,12 @@
 								<asp:Label ID="valpass" runat="server" Text="" ForeColor="Red"></asp:Label>
 							</div>
 							<div class="form-group">
+								<asp:DropDownList ID="conbuser" runat="server" CssClass="input">
+									<asp:ListItem Value="1">Artesano</asp:ListItem>
+									<asp:ListItem Value="2">Consumidor</asp:ListItem>
+								</asp:DropDownList>
+							</div>
+							<div class="form-group">
 								<asp:Button ID="btnguardar" runat="server" Text="Guardar" CssClass="btn btn-default" OnClick="btnguardar_Click" />
 								 
 							</div>

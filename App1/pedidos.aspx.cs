@@ -90,7 +90,7 @@ namespace App1
 				cnn.Close();
 			}
 		}
-		public void confirmarpedido(string idp, string lat, string lon, string dir)
+		public void confirmarpedido(string idp, string lat, string lon, string dir, string fp)
 		{ 
 
 			using (SqlConnection cnn = new SqlConnection(conex.Conexion()))
@@ -99,7 +99,7 @@ namespace App1
 				{
 					///mimensaje("Pedid "+lat+" lon "+lon +"dir "+dir);
 					cnn.Open(); 
-					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , DIRPED= '"+dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
+					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , PGPED= '" + fp + "', DIRPED= '" + dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
 					cmd.ExecuteNonQuery();
 					cargardatos();
 					mimensaje("Pedido aprobado con exito");
@@ -170,7 +170,7 @@ namespace App1
 		}
 		protected void btnguardardireccion_Click(object sender, EventArgs e)
 		{
-
+			string fp = this.conbpago.SelectedItem.ToString();
 			idv3.Visible = true;
 			if (txtde.Value.Equals(""))
 			{
@@ -178,9 +178,8 @@ namespace App1
 			}
 			else
 			{
-				lbled.Text = "";
-				//int idp = Int32.Parse(this.txtidpd.Text);
-				confirmarpedido(txtidpd.InnerHtml, lbllat.Value, lbllog.Value, txtde.Value);
+				lbled.Text = ""; 
+				confirmarpedido(txtidpd.InnerHtml, lbllat.Value, lbllog.Value, txtde.Value, fp);
 			}
 			
 		}

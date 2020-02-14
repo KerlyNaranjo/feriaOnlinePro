@@ -7,7 +7,7 @@
       <li class="active"><a href="admin.aspx"><i class="glyphicon glyphicon-cog"></i>Inicio</a></li>
        <li class="active"><a href="solpedidos.aspx"><i class="glyphicon glyphicon-user"></i>Pedidos Solicitados</a></li>
        <li class="active"><a href="manproductos.aspx"><i class="glyphicon glyphicon-pencil"></i>Mantenimiento Productos</a></li>
-       <li class="active"><a href="mantenimiento.aspx"><i class="glyphicon glyphicon-th-list"></i>Ingreso Perfil</a></li>
+       <li class="active"><a href="solpedidos2.aspx"><i class="glyphicon glyphicon-th-list"></i>Pedidos Realizados</a></li>
        <li class="active"><a href="mantenimiento.aspx"><i class="glyphicon glyphicon-pencil"></i>Editar Perfil</a></li>
        <li class="active"><a href="mantenimiento.aspx"><i class="glyphicon glyphicon-indent-left"></i>Permisos</a></li>
        <li class="active"><a href="mantenimiento.aspx"><i class="glyphicon glyphicon-pencil"></i>Registro Usuarios</a></li>

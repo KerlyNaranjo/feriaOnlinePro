@@ -124,10 +124,16 @@
 			   Longitud:<input type="text" runat="server" class="input" id="lbllog" /> 
 		 
 		  </div>
+		  <div class="form-group">
+								<asp:DropDownList ID="conbpago" runat="server" CssClass="input">
+									<asp:ListItem Value="1">Escoja su forma de pago</asp:ListItem>
+									<asp:ListItem Value="2">Contra entrega</asp:ListItem>
+									<asp:ListItem Value="3">Deposito Bancario</asp:ListItem>
+								</asp:DropDownList>
+							</div>
 		   <div class="form-group">
 		     <asp:Button ID="btnguardar" runat="server" Text="Guardar"  OnClientClick="return confirm('¿Esta seguro de querer confirmar el pedido seleccionado?');" OnClick="btnguardardireccion_Click" CssClass="btn btn-primary" />
-			 
-			   <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+			  
 		  </div>
 	  </div>
 

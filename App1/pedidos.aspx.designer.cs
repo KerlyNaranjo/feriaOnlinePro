@@ -114,6 +114,15 @@ namespace App1
 		protected global::System.Web.UI.HtmlControls.HtmlInputText lbllog;
 
 		/// <summary>
+		/// Control conbpago.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList conbpago;
+
+		/// <summary>
 		/// Control btnguardar.
 		/// </summary>
 		/// <remarks>
@@ -121,15 +130,6 @@ namespace App1
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button btnguardar;
-
-		/// <summary>
-		/// Control Button1.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Button1;
 
 		/// <summary>
 		/// Control lblerror.

@@ -47,7 +47,7 @@
 		   <table>
 			   <tr>
 				   <td>
-					   <img src="imgs/logo3.png"  width="200" height="120"/>
+					   <img src="imgs/logo4.jpg"  width="200" height="120"/>
 				   </td>
 				    <td>
 					   <h1>NATUR TIENDA EN LINEA</h1>

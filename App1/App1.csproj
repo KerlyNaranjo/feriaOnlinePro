@@ -231,6 +231,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="solpedidos.aspx" />
+    <Content Include="solpedidos2.aspx" />
     <Content Include="somos.aspx" />
     <Content Include="verpedidos.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="solpedidos.aspx.designer.cs">
       <DependentUpon>solpedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="solpedidos2.aspx.cs">
+      <DependentUpon>solpedidos2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="solpedidos2.aspx.designer.cs">
+      <DependentUpon>solpedidos2.aspx</DependentUpon>
     </Compile>
     <Compile Include="somos.aspx.cs">
       <DependentUpon>somos.aspx</DependentUpon>

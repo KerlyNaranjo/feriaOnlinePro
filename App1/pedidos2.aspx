@@ -102,7 +102,8 @@
 							<br />
 							<textarea id="txtcp" runat="server" style="width: 291px; height: 82px"></textarea>
 							
-								<br />
+							<br />
+							
 							<asp:Button ID="Button1" runat="server" Text="Guardar" CssClass="btn btn-default" OnClick="Button1_Click" />
 						</div>
 		         
