@@ -60,6 +60,7 @@
 				<th>FORMA DE PAGO</th>
 				<th>COMENTARIO</th>
 				<th>CALIFICACIÓN</th>
+				<th>FORMA DE ENTREGA</th>
 				<th>REPARTIDOR</th>
 			 
 				 
@@ -79,6 +80,7 @@
 					   <td><%# Eval("PGPED") %></td>
 					   <td><%# Eval("COMPED") %></td>
 					   <td><%# Eval("CALI") %></td>
+					   <td><%# Eval("FEPED") %></td>
 					  <td><%# Eval("REPARTIDOR") %></td>					    					   
 				   </tr>
             </ItemTemplate>   

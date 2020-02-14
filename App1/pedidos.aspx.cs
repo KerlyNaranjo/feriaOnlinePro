@@ -98,7 +98,7 @@ namespace App1
 				try
 				{ 
 					cnn.Open(); 
-					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , FEPED= '" + fp + "',  PGPED= '" + fp + "', DIRPED= '" + dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
+					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , FEPED= '" + fe + "',  PGPED= '" + fp + "', DIRPED= '" + dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
 					cmd.ExecuteNonQuery();
 					cargardatos();
 					mimensaje("Pedido aprobado con exito");
