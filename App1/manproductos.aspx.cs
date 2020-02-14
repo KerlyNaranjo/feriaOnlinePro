@@ -74,6 +74,8 @@ namespace App1
 				{
 					txtdes.Value = dr["DESPRO"].ToString();
 					txtpre.Value = dr["PREPRO"].ToString();
+					txtpeso.Value = dr["PESPRO"].ToString();
+					txtstock.Value = dr["STOCKPRO"].ToString();
 					this.cbxestado.SelectedItem.Value = dr["ESTPRO"].ToString();
 					imgpro.Src = dr["IMG"].ToString();
 					lblidp.Text= dr["IDPRO"].ToString();
@@ -99,6 +101,12 @@ namespace App1
 		}
 		protected void btnguardar_Click(object sender, EventArgs e)
 		{
+			if (txtdes.Value.Equals("") && txtpre.Value.Equals("") && txtstock.Value.Equals("") && txtpeso.Value.Equals(""))
+			{
+				mimensaje("Todos los campos son requeridos.");
+			}
+			else {
+
 			if (lblidp.Text.Equals(""))
 			{
 				if (subir() == "")
@@ -113,7 +121,7 @@ namespace App1
 						try
 						{
 							cnn.Open();
-							SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTOS ([DESPRO],[PREPRO],[STOCKPRO],[FECPRO],[ESTPRO],[IMG],[DESPROP]) VALUES ('" + txtdes.Value + "'," + txtpre.Value + ",10,GETDATE(), " + est + ",'" + ruta + "',0)", cnn);
+							SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTOS ([DESPRO],[PREPRO],[STOCKPRO],[FECPRO],[ESTPRO],[IMG],[DESPROP],[PESPRO]) VALUES ('" + txtdes.Value + "'," + txtpre.Value + "," + txtstock.Value + ",GETDATE(), " + est + ",'" + ruta + "',0," + txtpeso.Value + ")", cnn);
 							cmd.ExecuteNonQuery();
 							mimensaje("Producto registrado correctamente.");
 							cnn.Close();
@@ -138,11 +146,13 @@ namespace App1
 					subir();
 					string ruta = lgen.Text;
 					float pre = float.Parse(txtpre.Value);
+					float peso = float.Parse(txtpeso.Value);
+					float st= float.Parse(txtstock.Value);
 					int idp = Int32.Parse(lblidp.Text);
 					try
 					{
 						cnn.Open();
-						SqlCommand cmd = new SqlCommand("UPDATE PRODUCTOS SET DESPRO = '"+txtdes.Value+"', PREPRO = "+pre+", ESTPRO="+ est + ",IMG ='"+ ruta + "' WHERE IDPRO = "+idp+" ", cnn);
+						SqlCommand cmd = new SqlCommand("UPDATE PRODUCTOS SET PESPRO = " +peso + ",STOCKPRO = " + st+ ", DESPRO = '" + txtdes.Value + "', PREPRO = " + pre+", ESTPRO="+ est + ",IMG ='"+ ruta + "' WHERE IDPRO = "+idp+" ", cnn);
 						cmd.ExecuteNonQuery();
 						mimensaje("Producto Modificado correctamente.");
 						cnn.Close();
@@ -154,6 +164,7 @@ namespace App1
 						lblerror.Text = ex.Message.ToString();
 					}
 				}
+			}
 			}
 		}
 		public string subir()

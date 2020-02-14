@@ -46,7 +46,9 @@ namespace App1
 				if (dr.Read() == true)
 				{
 					lbldes.Text = "Producto: "+dr["DESPRO"].ToString();
-					lblprecio.Text =dr["PREPRO"].ToString();
+					lblprecio.Text = dr["PREPRO"].ToString();
+					lblstock.Text = dr["STOCKPRO"].ToString();
+					lblpeso.Text = dr["PESPRO"].ToString()+ "KG";
 					img1.ImageUrl = dr["IMG"].ToString(); ;
 				}
 				else
@@ -72,20 +74,37 @@ namespace App1
 			{
 				SqlConnection cnn = new SqlConnection(conex.Conexion());
 				cnn.Open();
-				SqlCommand cmd = new SqlCommand("SP_PEDIDO", cnn);
+				SqlCommand cmd = new SqlCommand("SP_PEDIDO", cnn); 
 				cmd.Parameters.Add("@IDCLI", SqlDbType.VarChar, 25).Value = idcli;
 				cmd.Parameters.Add("@IDPRO", SqlDbType.Int).Value = idpro;
 				cmd.Parameters.Add("@CANT", SqlDbType.Int).Value = cant;
 				cmd.Parameters.Add("@PRECIO", SqlDbType.Float).Value = precio;
 				cmd.Parameters.Add("@IDPEDIDO", SqlDbType.Int).Value =idped;
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.ExecuteNonQuery();				 
-			    mimensaje("Producto agregado al carrito"); 
+				SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+				rdr.Read();
+				string val = rdr["RES"].ToString();
+				//mimensaje(" res "+ val);
+
+				 if (val.ToString().Equals("1"))
+					{
+					mimensaje("Producto sin stock suficiente");
+					
+					}
+					else
+					{
+					mimensaje("Producto agregado al carrito");
+				}
+				 
+
+				
+			 
+				
 				cnn.Close();
 			}
 			catch (Exception ex)
-			{
-				mimensaje("Verifique sus datos dentro del catcha..." + ex);
+			{ 
+				lblerror.Text= ex.Message.ToString();
 			}		 
 	   }
 		protected void btncarrito_Click(object sender, ImageClickEventArgs e)

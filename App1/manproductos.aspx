@@ -44,6 +44,8 @@
 			<tr>
 				<th>CÓDIGO</th>
 				<th>DECRIPCIÓN</th>
+				<th>STOCK</th>
+				<th>PESO KG</th>
 				<th>PRECIO</th>
 				<th>IMAGEN</th>
 				<th>ESTADO</th>
@@ -58,7 +60,9 @@
 				   <tr>
 					  <td><%# Eval("IDPRO") %></td>
 					  <td><%# Eval("DESPRO") %></td>
-					  <td><%# Eval("PREPRO") %></td>
+					  <td><%# Eval("STOCKPRO") %></td>
+					   <td><%# Eval("PESPRO") %></td>
+					   <td><%# Eval("PREPRO") %></td>
 					  <td><img src="<%# Eval("IMG") %>" style="width:45PX; height:40PX;"/></td>
 					  <td><%# Eval("ESTPRO") %></td> 
 					  <td>
@@ -87,6 +91,12 @@
 		 </div>
 		   <div class="form-group">
 			  Precio: <input type="text" runat="server" class="input" id="txtpre" onkeyup="this.value=Numeros(this.value)"/>
+		 </div>
+		   <div class="form-group">
+			  Stock: <input type="text" runat="server" class="input" id="txtstock" onkeyup="this.value=Numeros(this.value)"/>
+		 </div>
+		  <div class="form-group">
+			 Peso: <input type="text" runat="server" class="input" id="txtpeso" onkeyup="this.value=Numeros(this.value)"/>
 		 </div>
 		  <div class="form-group">
 			  Estado: 

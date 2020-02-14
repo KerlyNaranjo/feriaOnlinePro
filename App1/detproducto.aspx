@@ -11,6 +11,14 @@
 				 <br /> <br />
 				 PRECIO: $<asp:Label ID="lblprecio" runat="server" Text="Label"></asp:Label>
 				 
+				 <br />
+				 <br />
+				 STOCK: <asp:Label ID="lblstock" runat="server" Text="Label"></asp:Label>
+				 
+				 <br />
+				 <br />
+				 PESO: <asp:Label ID="lblpeso" runat="server" Text="Label"></asp:Label>
+				 
 				 <br /><br />
 				CANTIDAD <input type="number"  id="txtnum" runat="server" style="width:80px;" value="0"/>
 				<br /><br />
@@ -20,5 +28,6 @@
 			</div>
 		</div>
 	</div>
+	<asp:Label ID="lblerror" runat="server" Text=""></asp:Label>
 	<br /><br />
 </asp:Content>

@@ -97,19 +97,19 @@
 		  <div class="form-group">
 		     Código:  
 	 
-		 <label runat="server" id="txtidpd"></label>
+		 <label runat="server" id="txtidpd" runat="server"></label>
 		  </div>
 		  <div class="form-group">
-		    Cliente: <label id="txtclid"></label>
+		    Cliente: <label id="txtclid" runat="server"></label>
 		  </div>
 		  <div class="form-group">
-		    Cantidad: <label id="txtcand"></label>
+		    Cantidad: <label id="txtcand" runat="server"></label>
 		  </div>
 		   <div class="form-group">
-		    Bubtotal: <label id="txtsubd"></label>
+		    Subtotal: <label id="txtsubd" runat="server"></label>
 		  </div>
 		   <div class="form-group">
-		    Total a pagar: <label id="txttotal"></label>
+		    Total a pagar: <label id="txttotal" runat="server"></label>
 		  </div>
 
 		  <div class="form-group">
@@ -129,6 +129,14 @@
 									<asp:ListItem Value="1">Escoja su forma de pago</asp:ListItem>
 									<asp:ListItem Value="2">Contra entrega</asp:ListItem>
 									<asp:ListItem Value="3">Deposito Bancario</asp:ListItem>
+								</asp:DropDownList>
+							</div>
+		   <div class="form-group">
+		 <div class="form-group">
+								<asp:DropDownList ID="conbentrega" runat="server" CssClass="input">
+									<asp:ListItem Value="1">Escoja su forma de entrega</asp:ListItem>
+									<asp:ListItem Value="2">Domicilio</asp:ListItem>
+									<asp:ListItem Value="3">Agencia de la Feria</asp:ListItem>
 								</asp:DropDownList>
 							</div>
 		   <div class="form-group">

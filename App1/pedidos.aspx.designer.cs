@@ -78,6 +78,42 @@ namespace App1
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtidpd;
 
 		/// <summary>
+		/// Control txtclid.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtclid;
+
+		/// <summary>
+		/// Control txtcand.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtcand;
+
+		/// <summary>
+		/// Control txtsubd.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtsubd;
+
+		/// <summary>
+		/// Control txttotal.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl txttotal;
+
+		/// <summary>
 		/// Control txtde.
 		/// </summary>
 		/// <remarks>
@@ -121,6 +157,15 @@ namespace App1
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.DropDownList conbpago;
+
+		/// <summary>
+		/// Control conbentrega.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList conbentrega;
 
 		/// <summary>
 		/// Control btnguardar.

@@ -188,6 +188,7 @@
     <Content Include="imgs\gps.png" />
     <Content Include="imgs\impresion.png" />
     <Content Include="imgs\logo.png" />
+    <Content Include="imgs\logo1.png" />
     <Content Include="imgs\logo2.png" />
     <Content Include="imgs\logo3.png" />
     <Content Include="imgs\man.jpg" />

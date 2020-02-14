@@ -42,6 +42,24 @@ namespace App1
 		protected global::System.Web.UI.WebControls.Label lblprecio;
 
 		/// <summary>
+		/// Control lblstock.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblstock;
+
+		/// <summary>
+		/// Control lblpeso.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblpeso;
+
+		/// <summary>
 		/// Control txtnum.
 		/// </summary>
 		/// <remarks>
@@ -67,5 +85,14 @@ namespace App1
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.ImageButton btnatras;
+
+		/// <summary>
+		/// Control lblerror.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblerror;
 	}
 }

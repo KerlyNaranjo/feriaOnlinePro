@@ -98,15 +98,17 @@ namespace App1
 			return x;
 		}
 		public void guardarregistros(string ced, string nom, string ape,string dir, string ema, string pass ,string tel) {
-			using (SqlConnection cnn = new SqlConnection(conex.Conexion()))
+			int rol = Int32.Parse( this.conbuser.SelectedValue);
+
+		  using (SqlConnection cnn = new SqlConnection(conex.Conexion()))
 			{
 				try
 				{
 					cnn.Open();
-					SqlCommand cmd = new SqlCommand(" INSERT INTO CLIENTES ([IDCLI] ,[NOMCLI] ,[APECLI],[DIRCLI] ,[FECCLI] ,[ESTCLI] ,[EMACLI],[TELCLI]) VALUES ( '" + ced + "','" + nom + "','" + ape + "','" + dir + "',GETDATE(), 1,'" + ema + "','" + tel + "')", cnn);
+					SqlCommand cmd = new SqlCommand(" INSERT INTO CLIENTES ([IDCLI] ,[NOMCLI] ,[APECLI],[DIRCLI] ,[FECCLI] ,[ESTCLI] ,[EMACLI],[TELCLI]) VALUES ( '" + ced + "','" + nom + "','" + ape + "','" + dir + "',GETDATE(),1,'" + ema + "','" + tel + "')", cnn);
 					cmd.ExecuteNonQuery();
 					 
-					SqlCommand cmd2 = new SqlCommand(" INSERT INTO USUARIO ([USU] ,[IDROL] ,[PASS] ,[ESTUSU]) VALUES ('" + ema+ "',1, '" + pass + "',1 )", cnn);
+					SqlCommand cmd2 = new SqlCommand(" INSERT INTO USUARIO ([USU] ,[IDROL] ,[PASS] ,[ESTUSU]) VALUES ('" + ema+ "',"+rol+", '" + pass + "',1 )", cnn);
 					cmd2.ExecuteNonQuery();
 					mimensaje("Registro Exitoso");
 					//Response.Redirect("login.aspx");

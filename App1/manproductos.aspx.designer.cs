@@ -96,6 +96,24 @@ namespace App1
 		protected global::System.Web.UI.HtmlControls.HtmlInputText txtpre;
 
 		/// <summary>
+		/// Control txtstock.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputText txtstock;
+
+		/// <summary>
+		/// Control txtpeso.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputText txtpeso;
+
+		/// <summary>
 		/// Control cbxestado.
 		/// </summary>
 		/// <remarks>

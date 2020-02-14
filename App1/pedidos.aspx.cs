@@ -90,16 +90,15 @@ namespace App1
 				cnn.Close();
 			}
 		}
-		public void confirmarpedido(string idp, string lat, string lon, string dir, string fp)
+		public void confirmarpedido(string idp, string lat, string lon, string dir, string fp ,string fe)
 		{ 
 
 			using (SqlConnection cnn = new SqlConnection(conex.Conexion()))
 			{
 				try
-				{
-					///mimensaje("Pedid "+lat+" lon "+lon +"dir "+dir);
+				{ 
 					cnn.Open(); 
-					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , PGPED= '" + fp + "', DIRPED= '" + dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
+					SqlCommand cmd = new SqlCommand(" UPDATE PEDIDO SET ESTPED = 2 , FEPED= '" + fp + "',  PGPED= '" + fp + "', DIRPED= '" + dir+ "' , LATPED = '" + lat + "', LOGPED = '" + lon + "'   WHERE IDPED = " + idp + "", cnn);
 					cmd.ExecuteNonQuery();
 					cargardatos();
 					mimensaje("Pedido aprobado con exito");
@@ -135,10 +134,31 @@ namespace App1
 		{
 			idv3.Visible = true;
 			ImageButton btn = (ImageButton)(sender);
-			string ac = btn.CommandArgument;
-			//confirmarpedido(Int32.Parse(ac));
-			//Response.Write("<script> $('#desp').modal({backdrop: 'static', keyboard: false});</script>");
+			string ac = btn.CommandArgument;  
 			txtidpd.InnerHtml = ac;
+			SqlConnection cnn = new SqlConnection(conex.Conexion());
+			cnn.Open();
+			SqlCommand cmd = null;
+			SqlDataReader dr = null;
+		    cmd = new SqlCommand("SELECT P.IDPED,CONCAT (NOMCLI,' ',APECLI) AS CLIENTE, SUM (D.CANDET) AS CANTIDAD , ROUND(SUM(D.PUDET*D.CANDET ) , 2) AS SUBTOTAL,ROUND(SUM(D.PUDET*D.CANDET * D.IVADET ),2 ) AS TOTAL FROM PEDIDO P INNER JOIN DETALLEPEDIDO D ON D.IDPED=P.IDPED INNER JOIN PRODUCTOS PR ON PR.IDPRO=D.IDPRO INNER JOIN CLIENTES C ON C.IDCLI=P.IDCLI WHERE P.IDPED="+ac+"  GROUP BY P.IDPED ,CONCAT (NOMCLI,' ',APECLI), P.ESTPED  ", cnn);
+
+			try
+			{
+
+				dr = cmd.ExecuteReader();
+				if (dr.Read() == true)
+				{
+					txtcand.InnerHtml = dr["CANTIDAD"].ToString();
+					txtsubd.InnerHtml = dr["SUBTOTAL"].ToString();
+					txtclid.InnerHtml = dr["CLIENTE"].ToString();
+					txttotal.InnerHtml= dr["TOTAL"].ToString(); 
+				}
+				 
+			}
+			catch (Exception ex)
+			{
+				mimensaje("Verifique sus datos dentro del catcha..." + ex);
+			}
 
 		}
 		protected void btnelipro_Click(object sender, EventArgs e)
@@ -171,7 +191,12 @@ namespace App1
 		protected void btnguardardireccion_Click(object sender, EventArgs e)
 		{
 			string fp = this.conbpago.SelectedItem.ToString();
+			string fe = this.conbentrega.SelectedItem.ToString();
 			idv3.Visible = true;
+			if (  txtde.Value.Equals("") && fp == "1" && fe == "1") {
+				mimensaje("Todos los campos son requeridos");
+             }else{
+			
 			if (txtde.Value.Equals(""))
 			{
 				lbled.Text = "Ingrese una dirección de entrega";
@@ -179,14 +204,11 @@ namespace App1
 			else
 			{
 				lbled.Text = ""; 
-				confirmarpedido(txtidpd.InnerHtml, lbllat.Value, lbllog.Value, txtde.Value, fp);
+				confirmarpedido(txtidpd.InnerHtml, lbllat.Value, lbllog.Value, txtde.Value, fp, fe);
 			}
-			
+			}
 		}
 
-		protected void Button1_Click(object sender, EventArgs e)
-		{
-			lbled.Text = "Ingrese una dirección de entrega";
-		}
+	 
 	}
 }

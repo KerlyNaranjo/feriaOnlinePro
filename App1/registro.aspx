@@ -67,8 +67,8 @@
 							</div>
 							<div class="form-group">
 								<asp:DropDownList ID="conbuser" runat="server" CssClass="input">
-									<asp:ListItem Value="1">Artesano</asp:ListItem>
-									<asp:ListItem Value="2">Consumidor</asp:ListItem>
+									<asp:ListItem Value="2">Artesano</asp:ListItem>
+									<asp:ListItem Value="1">Consumidor</asp:ListItem>
 								</asp:DropDownList>
 							</div>
 							<div class="form-group">

@@ -41,11 +41,12 @@
          </table>       	 
        	  </center>
 		 <div class="row">
-	<div class="col-xs-12 col-sm-6 col-md-6">
+	<div class="col-xs-12 col-sm-6 col-md-12">
 	<center>
 		 <asp:Label ID="lblep" runat="server" Text=""></asp:Label>
+		<br />
 		<div runat="server" id="divdetalle1">
-		<h1>Pedidos</h1>
+		<h3>Pedidos Realizados</h3>
 		 
 		<table id="example" class="table table-striped table-bordered" style="font-size: 10px;">
 		<thead>
@@ -60,7 +61,7 @@
 				<th>COMENTARIO</th>
 				<th>CALIFICACIÓN</th>
 				<th>REPARTIDOR</th>
-				<th></th>
+			 
 				 
 			</tr>
 		</thead>
@@ -74,16 +75,11 @@
 					  <td><%# Eval("CANTIDAD") %></td>
 					  <td><%# Eval("SUBTOTAL") %></td>
 					  <td><%# Eval("TOTAL") %></td>
-					   <td><%# Eval("ESTADO") %></td>
-					    <td><%# Eval("REPARTIDOR") %></td>
-					   <td>
-                      <asp:ImageButton ID="btnver" runat="server" CommandArgument='<%#Eval("IDPED")%>'  OnClick="btnver_Click" ImageUrl="~/imgs/ver.png" Width="20" Height="20"></asp:ImageButton>
-					   </td>
-					     <td>
-                           <a href="javascript:abrir(<%#Eval("IDPED")%>);"><img src="/imgs/impresion.png" Width="20" Height="20" /> </a>
-                        </td>
-
-					   
+					  <td><%# Eval("ESTADO") %></td>
+					   <td><%# Eval("PGPED") %></td>
+					   <td><%# Eval("COMPED") %></td>
+					   <td><%# Eval("CALI") %></td>
+					  <td><%# Eval("REPARTIDOR") %></td>					    					   
 				   </tr>
             </ItemTemplate>   
          </asp:Repeater> 
