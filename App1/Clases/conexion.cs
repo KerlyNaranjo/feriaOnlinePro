@@ -9,7 +9,7 @@ namespace App1.Clases
 	{
 		public string Conexion()
 		{ 
-			return @"server=192.168.10.204;Database=carrito;User id=sa;Password=AdminCoimpexa.;";		 
+			return @"server=DESKTOP-F8TTP4A;Database=carrito;User id=sa;Password=1234;";		 
 		}
 
 	}

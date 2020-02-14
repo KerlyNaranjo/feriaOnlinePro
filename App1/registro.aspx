@@ -55,12 +55,12 @@
                                 CssClass="text-danger" ErrorMessage="Ingrese su correo." />
 							</div>
 							<div class="form-group">
-								  <asp:TextBox runat="server" ID="txtpass" TextMode="Password" CssClass="input" />
+								  <asp:TextBox runat="server" ID="txtpass" TextMode="Password" CssClass="input" placeholder="Ingresa tu contraseña"/>
 							       <asp:RequiredFieldValidator runat="server" ControlToValidate="txtpass"
                                 CssClass="text-danger" ErrorMessage="Ingrese su clave." />
 							</div>
 							<div class="form-group">
-								  <asp:TextBox runat="server" ID="txtpass2" TextMode="Password" CssClass="input" />
+								  <asp:TextBox runat="server" ID="txtpass2" TextMode="Password" CssClass="input" placeholder="Confirma tu contraseña"/>
 							      <asp:RequiredFieldValidator runat="server" ControlToValidate="txtpass2"
                                 CssClass="text-danger" ErrorMessage="Ingrese su clave nuevamente" />
 								<asp:Label ID="valpass" runat="server" Text="" ForeColor="Red"></asp:Label>

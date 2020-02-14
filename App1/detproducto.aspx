@@ -8,10 +8,17 @@
 	       </div>
 			<div class="col-xs-12 col-sm-6 col-md-4">
 				<asp:Label ID="lbldes" runat="server" Text="Label"></asp:Label>
+
 				 <br /> <br />
 				 PRECIO: $<asp:Label ID="lblprecio" runat="server" Text="Label"></asp:Label>
-				 
 				 <br /><br />
+                
+                STOCK : <asp:Label ID="lblstock" runat="server" Text="Label"></asp:Label>
+				 <br /><br />
+
+                 PESO (Kg): <asp:Label ID="lblpeso" runat="server" Text="Label"></asp:Label>
+				 <br /><br />
+
 				CANTIDAD <input type="number"  id="txtnum" runat="server" style="width:80px;" value="0"/>
 				<br /><br />
 				<asp:ImageButton ID="btncarrito" runat="server" ImageUrl="imgs/cesta.png" Width="50px" Height="40px" OnClick="btncarrito_Click" />

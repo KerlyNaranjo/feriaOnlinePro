@@ -47,8 +47,10 @@ namespace App1
 				{
 					lbldes.Text = "Producto: "+dr["DESPRO"].ToString();
 					lblprecio.Text =dr["PREPRO"].ToString();
-					img1.ImageUrl = dr["IMG"].ToString(); ;
-				}
+					img1.ImageUrl = dr["IMG"].ToString();
+                    lblstock.Text = dr["STOCKPRO"].ToString();
+                    lblpeso.Text = dr["PESPRO"].ToString(); ;
+                }
 				else
 				{
 					mimensaje("Usuario / Contraseña incorectos.");
@@ -77,7 +79,7 @@ namespace App1
 				cmd.Parameters.Add("@IDPRO", SqlDbType.Int).Value = idpro;
 				cmd.Parameters.Add("@CANT", SqlDbType.Int).Value = cant;
 				cmd.Parameters.Add("@PRECIO", SqlDbType.Float).Value = precio;
-				cmd.Parameters.Add("@IDPEDIDO", SqlDbType.Int).Value =idped;
+                cmd.Parameters.Add("@IDPEDIDO", SqlDbType.Int).Value =idped;
 				cmd.CommandType = CommandType.StoredProcedure;
 				cmd.ExecuteNonQuery();				 
 			    mimensaje("Producto agregado al carrito"); 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  EnableEventValidation="false" CodeBehind="manproductos.aspx.cs" Inherits="App1.manproductos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-	<script type="text/javascript">
+    <script type="text/javascript">
 		function Numeros(string) {//solo letras y numeros
 			var out = '';
 			//Se añaden solo numeros
@@ -33,13 +33,13 @@
        <!-- EDSION -->
 	<asp:Button ID="btnagregar" runat="server" Text="Agregar Producto" CssClass="btn btn-default" OnClick="btnagregar_Click"/>    
 	 <div class="row">
-	<div class="col-xs-12 col-sm-6 col-md-6">
+	<div class="col-xs-12 col-sm-8 col-md-8">
 	<center>
 		 <asp:Label ID="lblep" runat="server" Text=""></asp:Label>
 		<div runat="server" id="divdetalle1">
 		<h1></h1>
 		 
-		<table id="example" class="table table-striped table-bordered" style="font-size: 10px;">
+		<table id="example" class="table table-striped table-bordered" style="font-size: 10px; height: 318px;">
 		<thead>
 			<tr>
 				<th>CÓDIGO</th>
@@ -47,28 +47,35 @@
 				<th>PRECIO</th>
 				<th>IMAGEN</th>
 				<th>ESTADO</th>
-				<th></th> 
+				<th>PRODUCTO</th>
+                <th>STOCK</th>
+				<th>PESO</th> 
 				<th></th> 
 			</tr>
 		</thead>
 		<tbody>
        
 		<asp:Repeater ID="rptPedidos" runat="server">
-              <ItemTemplate>
+              <itemtemplate>
 				   <tr>
 					  <td><%# Eval("IDPRO") %></td>
 					  <td><%# Eval("DESPRO") %></td>
 					  <td><%# Eval("PREPRO") %></td>
+                       
 					  <td><img src="<%# Eval("IMG") %>" style="width:45PX; height:40PX;"/></td>
 					  <td><%# Eval("ESTPRO") %></td> 
 					  <td>
                       <asp:ImageButton ID="btnver" runat="server" CommandArgument='<%#Eval("IDPRO")%>'  OnClick="btnver_Click" ImageUrl="~/imgs/ver.png" Width="20" Height="20"></asp:ImageButton>
 					  </td>
+
+                       <td><%# Eval("STOCKPRO") %></td>
+                       <td><%# Eval("PESPRO") %></td>
 					    <td>
                       <asp:ImageButton ID="btneli" runat="server" CommandArgument='<%#Eval("IDPRO")%>'  OnClick="btneli_Click" ImageUrl="~/imgs/eli.png" Width="20" Height="20" OnClientClick="return confirm('¿Esta seguro de querer eliminar el producto seleccionado?');"></asp:ImageButton>
-					  </td>					   
+					  </td>	
+                       
 				   </tr>
-            </ItemTemplate>   
+            </itemtemplate>   
          </asp:Repeater> 
 		</tbody>
 		</table>
@@ -86,6 +93,15 @@
 			 Descripción:  <input type="text" runat="server" class="input" id="txtdes"/>
 		 </div>
 		   <div class="form-group">
+
+              Stock: <input type="text" runat="server" class="input" id="txtstock" onkeyup="this.value=Numeros(this.value)"/>
+		 </div>
+		  <div class="form-group">
+
+              Peso (Kg): <input type="text" runat="server" class="input" id="txtpeso" onkeyup="this.value=Numeros(this.value)"/>
+		 </div>
+		  <div class="form-group">
+
 			  Precio: <input type="text" runat="server" class="input" id="txtpre" onkeyup="this.value=Numeros(this.value)"/>
 		 </div>
 		  <div class="form-group">
@@ -104,6 +120,8 @@
 		  <div class="form-group">
 			 <asp:Button ID="btnguardar" runat="server" Text="Guardar" CssClass="btn btn-default" OnClick="btnguardar_Click" />
 		 </div>
+
+           
 		   
       </div>
  </div>

@@ -77,8 +77,9 @@ namespace App1
 					this.cbxestado.SelectedItem.Value = dr["ESTPRO"].ToString();
 					imgpro.Src = dr["IMG"].ToString();
 					lblidp.Text= dr["IDPRO"].ToString();
-
-				}
+                    txtstock.Value = dr["STOCKPRO"].ToString();
+                    txtpeso.Value = dr["PESPRO"].ToString();
+                }
 				else
 				{
 					mimensaje("Consulte con su administrador");
@@ -113,7 +114,7 @@ namespace App1
 						try
 						{
 							cnn.Open();
-							SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTOS ([DESPRO],[PREPRO],[STOCKPRO],[FECPRO],[ESTPRO],[IMG],[DESPROP]) VALUES ('" + txtdes.Value + "'," + txtpre.Value + ",10,GETDATE(), " + est + ",'" + ruta + "',0)", cnn);
+							SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTOS ([DESPRO],[PREPRO],[STOCKPRO],[FECPRO],[ESTPRO],[IMG],[DESPROP],[PESPRO]) VALUES ('" + txtdes.Value + "'," + txtpre.Value + ","+txtstock.Value+",GETDATE(), " + est + ",'" + ruta + "',0,"+txtpeso.Value+")", cnn);
 							cmd.ExecuteNonQuery();
 							mimensaje("Producto registrado correctamente.");
 							cnn.Close();
